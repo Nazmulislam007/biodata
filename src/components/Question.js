@@ -5,9 +5,21 @@ import TextInput from "./TextInput";
 
 const Question = () => {
   const { dispatch, inputValue, setInputValue } = useChecks();
+  const { question } = inputValue;
+  const { first, second, third, fourth } = inputValue;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setInputValue({ ...inputValue, [name]: value });
+    setInputValue({
+      ...inputValue,
+      question: {
+        ...question,
+        first: { ...first, [name]: value },
+        second: { ...second, [name]: value },
+        third: { ...third, [name]: value },
+        fourth: { ...fourth, [name]: value },
+      },
+    });
   };
   return (
     <>
@@ -19,20 +31,20 @@ const Question = () => {
           <h1 className="text-lg mb-3">👉 Why do you want to Join us?</h1>
           <TextInput
             onChange={handleChange}
-            name="j01"
-            value={inputValue.j01}
+            name="fq1"
+            value={inputValue.fq1}
             no="1."
           />
           <TextInput
             onChange={handleChange}
-            name="j02"
-            value={inputValue.j02}
+            name="fq2"
+            value={inputValue.fq2}
             no="2."
           />
           <TextInput
             onChange={handleChange}
-            name="j03"
-            value={inputValue.j03}
+            name="fq3"
+            value={inputValue.fq3}
             no="3."
           />
         </div>
@@ -42,20 +54,20 @@ const Question = () => {
           </h1>
           <TextInput
             onChange={handleChange}
-            name="d01"
-            value={inputValue.d01}
+            name="sq1"
+            value={inputValue.sq1}
             no="1."
           />
           <TextInput
             onChange={handleChange}
-            name="d02"
-            value={inputValue.d02}
+            name="sq2"
+            value={inputValue.sq2}
             no="2."
           />
           <TextInput
             onChange={handleChange}
-            name="d03"
-            value={inputValue.d03}
+            name="sq3"
+            value={inputValue.sq3}
             no="3."
           />
         </div>
@@ -65,20 +77,20 @@ const Question = () => {
           </h1>
           <TextInput
             onChange={handleChange}
-            name="i01"
-            value={inputValue.i01}
+            name="tq1"
+            value={inputValue.tq1}
             no="1."
           />
           <TextInput
             onChange={handleChange}
-            name="i02"
-            value={inputValue.i02}
+            name="tq2"
+            value={inputValue.tq2}
             no="2."
           />
           <TextInput
             onChange={handleChange}
-            name="i03"
-            value={inputValue.i03}
+            name="tq3"
+            value={inputValue.tq3}
             no="3."
           />
         </div>
@@ -88,20 +100,20 @@ const Question = () => {
           </h1>
           <TextInput
             onChange={handleChange}
-            name="s01"
-            value={inputValue.s01}
+            name="fq1"
+            value={inputValue.fq1}
             no="1."
           />
           <TextInput
             onChange={handleChange}
-            name="s02"
-            value={inputValue.s02}
+            name="fq2"
+            value={inputValue.fq2}
             no="2."
           />
           <TextInput
             onChange={handleChange}
-            name="s03"
-            value={inputValue.s03}
+            name="fq3"
+            value={inputValue.fq3}
             no="3."
           />
         </div>

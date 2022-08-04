@@ -1,7 +1,6 @@
 import { ref, set } from "firebase/database";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 import { useChecks } from "../context/ChecksContext";
 import { db } from "../firebase/firebase";
 import Button from "./Button";
@@ -12,7 +11,7 @@ const SubmitData = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    set(ref(db, "BioData/" + inputValue.username), inputValue)
+    set(ref(db, "BioData/" + inputValue.bio.username), inputValue)
       .then(() => {
         alert("data insert successfully");
         navigate("/result", { replace: true });

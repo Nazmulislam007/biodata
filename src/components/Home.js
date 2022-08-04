@@ -3,15 +3,15 @@ import Button from "./Button";
 import InputField from "./InputField";
 
 const Home = () => {
-  const { dispatch, inputValue, setInputValue } = useChecks();
-
+  const { dispatch, setInputValue, inputValue } = useChecks();
+  const { bio } = inputValue;
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setInputValue({ ...inputValue, [name]: value });
+    setInputValue({ ...inputValue, bio: { ...bio, [name]: value } });
   };
 
   const handleImgChange = (e) => {
-    setInputValue({ ...inputValue, image: e.target.files[0] });
+    setInputValue({ ...inputValue, bio: { ...bio, image: e.target.files[0] } });
   };
 
   return (
@@ -22,7 +22,7 @@ const Home = () => {
           title="Applicant Name"
           onChange={handleChange}
           name="username"
-          value={inputValue.username}
+          value={bio.username}
           type="text"
           required
         />
@@ -38,7 +38,7 @@ const Home = () => {
           type="text"
           onChange={handleChange}
           name="fName"
-          value={inputValue.fName}
+          value={bio.fName}
           required
         />
         <InputField
@@ -46,7 +46,7 @@ const Home = () => {
           type="text"
           onChange={handleChange}
           name="mName"
-          value={inputValue.mName}
+          value={bio.mName}
           required
         />
         <InputField
@@ -54,7 +54,7 @@ const Home = () => {
           type="email"
           onChange={handleChange}
           name="email"
-          value={inputValue.email}
+          value={bio.email}
           required
         />
 
@@ -63,7 +63,7 @@ const Home = () => {
           type="number"
           onChange={handleChange}
           name="pnp"
-          value={inputValue.pnp}
+          value={bio.pnp}
           required
         />
 
@@ -72,7 +72,7 @@ const Home = () => {
           type="number"
           onChange={handleChange}
           name="pne"
-          value={inputValue.pne}
+          value={bio.pne}
           required
         />
         <InputField
@@ -80,7 +80,7 @@ const Home = () => {
           type="text"
           onChange={handleChange}
           name="reli"
-          value={inputValue.reli}
+          value={bio.reli}
           required
         />
         <InputField
@@ -88,14 +88,14 @@ const Home = () => {
           type="text"
           onChange={handleChange}
           name="bg"
-          value={inputValue.bg}
+          value={bio.bg}
         />
         <InputField
           title="NID/Birth Registration Number"
           type="number"
           onChange={handleChange}
           name="nid"
-          value={inputValue.nid}
+          value={bio.nid}
           required
         />
       </div>

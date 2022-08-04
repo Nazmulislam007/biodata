@@ -8,24 +8,23 @@ import Button from "../Button";
 const Result = () => {
   const [data, setData] = useState({});
   const [inputData, setInputData] = useState("");
-  const [userData, setUserData] = useState("");
+  const { bio, education, question } = data;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUserData(inputData);
+    get(child(ref(db), "BioData/" + inputData))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setData(snapshot.val());
+        } else {
+          alert("no data found");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
-  get(child(ref(db), "BioData/" + userData))
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        setData(snapshot.val());
-      } else {
-        alert("no data found");
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
   return (
     <>
       <div>
@@ -36,40 +35,39 @@ const Result = () => {
         />
         <Button title="Details" className="mb-4" onClick={handleSubmit} />
         <div className="style">
-          <p>{data.username}</p>
-          <p>{data.fName}</p>
-          <p>{data.mName}</p>
-          <p>{data.email}</p>
-          <p>{data.pnp}</p>
-          <p>{data.pne}</p>
-          <p>{data.reli}</p>
-          <p>{data.bg}</p>
-          <p>{data.nid}</p>
-          <p>{data.exam1}</p>
-          <p>{data.group1}</p>
-          <p>{data.inName1}</p>
-          <p>{data.board1}</p>
-          <p>{data.cgpa1}</p>
-          <p>{data.year1}</p>
-          <p>{data.exam2}</p>
-          <p>{data.group2}</p>
-          <p>{data.inName2}</p>
-          <p>{data.board2}</p>
-          <p>{data.cgpa2}</p>
-          <p>{data.year2}</p>
-          <p>{data.j01}</p>
-          <p>{data.d01}</p>
-          <p>{data.i01}</p>
-          <p>{data.s01}</p>
-          <p>{data.j02}</p>
-          <p>{data.d02}</p>
-          <p>{data.i02}</p>
-          <p>{data.s02}</p>
-          <p>{data.j03}</p>
-          <p>{data.d03}</p>
-          <p>{data.i03}</p>
-          <p>{data.s03}</p>
-          <p>{data.username}</p>
+          <p>{bio?.username}</p>
+          <p>{bio?.fName}</p>
+          <p>{bio?.mName}</p>
+          <p>{bio?.email}</p>
+          <p>{bio?.pnp}</p>
+          <p>{bio?.pne}</p>
+          <p>{bio?.reli}</p>
+          <p>{bio?.bg}</p>
+          <p>{bio?.nid}</p>
+          <p>{education?.exam1.exam1}</p>
+          <p>{education?.exam1.group1}</p>
+          <p>{education?.exam1.inName1}</p>
+          <p>{education?.exam1.board1}</p>
+          <p>{education?.exam1.cgpa1}</p>
+          <p>{education?.exam1.year1}</p>
+          <p>{education?.exam2.exam2}</p>
+          <p>{education?.exam2.group2}</p>
+          <p>{education?.exam2.inName2}</p>
+          <p>{education?.exam2.board2}</p>
+          <p>{education?.exam2.cgpa2}</p>
+          <p>{education?.exam2.year2}</p>
+          <p>{question?.first.fq1}</p>
+          <p>{question?.first.fq2}</p>
+          <p>{question?.first.fq3}</p>
+          <p>{question?.second.sq1}</p>
+          <p>{question?.second.sq2}</p>
+          <p>{question?.second.sq3}</p>
+          <p>{question?.third.tq1}</p>
+          <p>{question?.third.tq2}</p>
+          <p>{question?.third.tq3}</p>
+          <p>{question?.fourth.fq1}</p>
+          <p>{question?.fourth.fq2}</p>
+          <p>{question?.fourth.fq3}</p>
         </div>
       </div>
 

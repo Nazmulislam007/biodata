@@ -16,43 +16,63 @@ const ChecksContext = ({ children }) => {
   });
 
   const [inputValue, setInputValue] = useState({
-    username: "",
-    fName: "",
-    mName: "",
-    image: "",
-    email: "",
-    pnp: "",
-    pne: "",
-    reli: "",
-    bg: "",
-    nid: "",
-    exam1: "",
-    group1: "",
-    inName1: "",
-    board1: "",
-    cgpa1: "",
-    year1: "",
-    exam2: "",
-    group2: "",
-    inName2: "",
-    board2: "",
-    cgpa2: "",
-    year2: "",
-    j01: "",
-    d01: "",
-    i01: "",
-    s01: "",
-    j02: "",
-    d02: "",
-    i02: "",
-    s02: "",
-    j03: "",
-    d03: "",
-    i03: "",
-    s03: "",
-  });
+    bio: {
+      username: "",
+      fName: "",
+      mName: "",
+      image: "",
+      email: "",
+      pnp: "",
+      pne: "",
+      reli: "",
+      bg: "",
+      nid: "",
+    },
 
-  const value = { ...state, inputValue, setInputValue, dispatch };
+    education: {
+      exam1: {
+        name1: "",
+        group1: "",
+        inName1: "",
+        board1: "",
+        cgpa1: "",
+        year1: "",
+      },
+      exam2: {
+        name2: "",
+        group2: "",
+        inName2: "",
+        board2: "",
+        cgpa2: "",
+        year2: "",
+      },
+    },
+
+    qusetion: {
+      first: {
+        fq1: "",
+        fq2: "",
+        fq3: "",
+      },
+      second: {
+        sq1: "",
+        sq2: "",
+        sq3: "",
+      },
+      third: { tq1: "", tq2: "", tq3: "" },
+      fourth: {
+        fq1: "",
+        fq2: "",
+        fq3: "",
+      },
+    },
+  });
+  const value = {
+    ...state,
+    inputValue,
+    setInputValue,
+    dispatch,
+  };
 
   return (
     <CreateChecks.Provider value={value}>{children}</CreateChecks.Provider>
