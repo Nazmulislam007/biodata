@@ -5,16 +5,16 @@ import InputField from "./InputField";
 const Educational = () => {
   const { dispatch, inputValue, setInputValue } = useChecks();
   const { education } = inputValue;
-  const { exam1, exam2 } = education;
+  const { exam } = education;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setInputValue({
       ...inputValue,
       education: {
         ...education,
-        exam1: { ...exam1, [name]: value },
-        exam2: { ...exam2, [name]: value },
+        exam: { ...exam, [name]: value },
       },
     });
   };
@@ -32,7 +32,7 @@ const Educational = () => {
               title="Exam"
               onChange={handleChange}
               name="name1"
-              value={exam1.name}
+              value={exam.name1}
               type="text"
               required
             />
@@ -41,7 +41,7 @@ const Educational = () => {
               type="text"
               onChange={handleChange}
               name="group1"
-              value={exam1.group}
+              value={exam.group1}
               required
             />
             <InputField
@@ -49,7 +49,7 @@ const Educational = () => {
               type="text"
               onChange={handleChange}
               name="inName1"
-              value={exam1.inName}
+              value={exam.inName1}
               required
             />
             <InputField
@@ -57,7 +57,7 @@ const Educational = () => {
               type="text"
               onChange={handleChange}
               name="board1"
-              value={exam1.board}
+              value={exam.board1}
               required
             />
             <InputField
@@ -65,7 +65,7 @@ const Educational = () => {
               type="number"
               onChange={handleChange}
               name="cgpa1"
-              value={exam1.cgpa}
+              value={exam.cgpa1}
               required
             />
             <InputField
@@ -73,7 +73,7 @@ const Educational = () => {
               type="number"
               onChange={handleChange}
               name="year1"
-              value={exam1.year}
+              value={exam.year1}
               required
             />
           </div>
@@ -85,7 +85,7 @@ const Educational = () => {
               title="Exam"
               onChange={handleChange}
               name="name2"
-              value={exam2.name}
+              value={exam.name2}
               type="text"
               required
             />
@@ -94,7 +94,7 @@ const Educational = () => {
               type="text"
               onChange={handleChange}
               name="group2"
-              value={exam2.group}
+              value={exam.group2}
               required
             />
             <InputField
@@ -102,7 +102,7 @@ const Educational = () => {
               type="text"
               onChange={handleChange}
               name="inName2"
-              value={exam2.inName}
+              value={exam.inName2}
               required
             />
             <InputField
@@ -110,7 +110,7 @@ const Educational = () => {
               type="text"
               onChange={handleChange}
               name="board2"
-              value={exam2.board}
+              value={exam.board2}
               required
             />
             <InputField
@@ -118,7 +118,7 @@ const Educational = () => {
               type="number"
               onChange={handleChange}
               name="cgpa2"
-              value={exam2.cgpa}
+              value={exam.cgpa2}
               required
             />
             <InputField
@@ -126,7 +126,7 @@ const Educational = () => {
               type="number"
               onChange={handleChange}
               name="year2"
-              value={exam2.year}
+              value={exam.year2}
               required
             />
           </div>

@@ -9,7 +9,7 @@ const TextInput = ({ no, className, ...props }) => {
       <textarea
         className="w-full bg-white border-b-[3px] border-b-transparent transition text-lg px-[3px] focus:outline-offset-0 focus:outline-none focus-within:border-b-[3px] focus-within:border-b-red-600"
         maxLength={80}
-        rows="1"
+        rows="2"
         {...props}
       ></textarea>
     </div>

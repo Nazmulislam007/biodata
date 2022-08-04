@@ -30,15 +30,13 @@ const ChecksContext = ({ children }) => {
     },
 
     education: {
-      exam1: {
+      exam: {
         name1: "",
         group1: "",
         inName1: "",
         board1: "",
         cgpa1: "",
         year1: "",
-      },
-      exam2: {
         name2: "",
         group2: "",
         inName2: "",
@@ -48,25 +46,22 @@ const ChecksContext = ({ children }) => {
       },
     },
 
-    qusetion: {
-      first: {
-        fq1: "",
-        fq2: "",
-        fq3: "",
-      },
-      second: {
-        sq1: "",
-        sq2: "",
-        sq3: "",
-      },
-      third: { tq1: "", tq2: "", tq3: "" },
-      fourth: {
-        fq1: "",
-        fq2: "",
-        fq3: "",
-      },
+    question: {
+      fq1: "",
+      fq2: "",
+      fq3: "",
+      sq1: "",
+      sq2: "",
+      sq3: "",
+      tq1: "",
+      tq2: "",
+      tq3: "",
+      frq1: "",
+      frq2: "",
+      frq3: "",
     },
   });
+
   const value = {
     ...state,
     inputValue,

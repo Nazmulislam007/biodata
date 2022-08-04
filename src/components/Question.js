@@ -6,7 +6,6 @@ import TextInput from "./TextInput";
 const Question = () => {
   const { dispatch, inputValue, setInputValue } = useChecks();
   const { question } = inputValue;
-  const { first, second, third, fourth } = inputValue;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,13 +13,11 @@ const Question = () => {
       ...inputValue,
       question: {
         ...question,
-        first: { ...first, [name]: value },
-        second: { ...second, [name]: value },
-        third: { ...third, [name]: value },
-        fourth: { ...fourth, [name]: value },
+        [name]: value,
       },
     });
   };
+
   return (
     <>
       <div>
@@ -32,19 +29,19 @@ const Question = () => {
           <TextInput
             onChange={handleChange}
             name="fq1"
-            value={inputValue.fq1}
+            value={question.fq1}
             no="1."
           />
           <TextInput
             onChange={handleChange}
             name="fq2"
-            value={inputValue.fq2}
+            value={question.fq2}
             no="2."
           />
           <TextInput
             onChange={handleChange}
             name="fq3"
-            value={inputValue.fq3}
+            value={question.fq3}
             no="3."
           />
         </div>
@@ -55,19 +52,19 @@ const Question = () => {
           <TextInput
             onChange={handleChange}
             name="sq1"
-            value={inputValue.sq1}
+            value={question.sq1}
             no="1."
           />
           <TextInput
             onChange={handleChange}
             name="sq2"
-            value={inputValue.sq2}
+            value={question.sq2}
             no="2."
           />
           <TextInput
             onChange={handleChange}
             name="sq3"
-            value={inputValue.sq3}
+            value={question.sq3}
             no="3."
           />
         </div>
@@ -78,19 +75,19 @@ const Question = () => {
           <TextInput
             onChange={handleChange}
             name="tq1"
-            value={inputValue.tq1}
+            value={question.tq1}
             no="1."
           />
           <TextInput
             onChange={handleChange}
             name="tq2"
-            value={inputValue.tq2}
+            value={question.tq2}
             no="2."
           />
           <TextInput
             onChange={handleChange}
             name="tq3"
-            value={inputValue.tq3}
+            value={question.tq3}
             no="3."
           />
         </div>
@@ -100,20 +97,20 @@ const Question = () => {
           </h1>
           <TextInput
             onChange={handleChange}
-            name="fq1"
-            value={inputValue.fq1}
+            name="frq1"
+            value={question.frq1}
             no="1."
           />
           <TextInput
             onChange={handleChange}
-            name="fq2"
-            value={inputValue.fq2}
+            name="frq2"
+            value={question.frq2}
             no="2."
           />
           <TextInput
             onChange={handleChange}
-            name="fq3"
-            value={inputValue.fq3}
+            name="frq3"
+            value={question.frq3}
             no="3."
           />
         </div>

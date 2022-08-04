@@ -6,13 +6,13 @@ import { getDatabase } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCA0G1Gv-UGOj63mvdgDzCEInCMxjvISHI",
-  authDomain: "biodata-2453c.firebaseapp.com",
-  databaseURL: "https://biodata-2453c-default-rtdb.firebaseio.com",
-  projectId: "biodata-2453c",
-  storageBucket: "biodata-2453c.appspot.com",
-  messagingSenderId: "213447425264",
-  appId: "1:213447425264:web:a6d31043b83ccf95015635",
+  apiKey: "AIzaSyDOaZU4FEDNa0T7s0soeTpUWFHAWITSsBw",
+  authDomain: "biodata-f3cd7.firebaseapp.com",
+  databaseURL: "https://biodata-f3cd7-default-rtdb.firebaseio.com",
+  projectId: "biodata-f3cd7",
+  storageBucket: "biodata-f3cd7.appspot.com",
+  messagingSenderId: "400119128167",
+  appId: "1:400119128167:web:8e6c47016408df65ebb4c2",
 };
 
 // Initialize Firebase
